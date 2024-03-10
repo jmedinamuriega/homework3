@@ -124,6 +124,9 @@ print(DIVIDER)
 # You are provided with a Python script that is supposed to handle errors silently, but it has some mistakes. Identify and fix them.
 
 # Buggy Code:
+# Task 2: Division Calculator
+
+# Based on the corrected code from Task 1, enhance the program to handle other potential errors, such as a ValueError or TypeError. Experiment with what happens when you divide an integer by a string and identify what kind of error it gives you. Then use the except statement to handle the error.
 
 
 try:
@@ -138,9 +141,6 @@ try:
     car+=1
 except TypeError:
     pass
-# Task 2: Division Calculator
-
-# Based on the corrected code from Task 1, enhance the program to handle other potential errors, such as a ValueError or TypeError. Experiment with what happens when you divide an integer by a string and identify what kind of error it gives you. Then use the except statement to handle the error.
 
 # Task 3: File Reader
 
@@ -152,7 +152,7 @@ try:
 except FileNotFoundError:
     f = open("test.txt", "r")
     print(f.read())
-
+print(DIVIDER)
 # 4. Nested Quick Decisions: The Shopping Assistant 🛍️
 # Objective:
 
@@ -168,6 +168,12 @@ except FileNotFoundError:
 # clothing = "sunglasses" if weather == "sunny" else "umbrella" if weather == "rainy" else "sweater"
 # print(clothing)
 # Task 2: Clothing Recommendation
+# Task 2: Clothing Recommendation
+# Based on the corrected code from Task 1, further enhance the program to recommend additional items like "hat" or "boots" based on the weather.
+
+# Task 3: Accessory Recommendation
+
+# Based on the clothing recommendation, suggest an accessory. For instance, if "sunglasses" were recommended, suggest "sunscreen" as an accessory.
 
 weather = input("Enter the weather: sunny, rainy, or cold: ")
 clothing = "sunglasses" if weather == "sunny" else "umbrella" if weather == "rainy" else "sweater"
@@ -187,16 +193,7 @@ if hard_weather=="yes":
         print("Use snow bots!")
 else:
     print("I think you are going to be okay with these clothes")
-
-
-
-# Task 2: Clothing Recommendation
-# Based on the corrected code from Task 1, further enhance the program to recommend additional items like "hat" or "boots" based on the weather.
-
-# Task 3: Accessory Recommendation
-
-# Based on the clothing recommendation, suggest an accessory. For instance, if "sunglasses" were recommended, suggest "sunscreen" as an accessory.
-
+print(DIVIDER)
 # 5. The Silent Logger: System Monitor 🖥️
 # Objective:
 
@@ -218,11 +215,28 @@ else:
 # Task 2: System Check
 
 # Based on the corrected code from Task 1, enhance the program to also monitor memory usage and disk space, and provide alerts accordingly.
+
 import random
-cpu_usage = random.randint(91, 100)
+cpu_usage = random.randint(0, 100)
+disk_usage=random.randint(0,100)
+ram_usage=random.randint(0,100)
 if cpu_usage > 90:
     print("High CPU usage!")
-elif cpu_usage > 80 and cpu_usage <= 90:
-    pass
+    user_decition=input("Do you want to restart the PC? Yes/No :")
+    if user_decition=="yes":
+        print("restarting")  
+if disk_usage>90:
+    print("High disk usage it could make your pc slower")
+if ram_usage>90:
+    ("print high ram usage")
+if ram_usage>90 and disk_usage>90 and cpu_usage>90:
+    user_decition2=input("Your pc is on a critical state, do you want to format the computer? yes/no ")
+    if user_decition=="yes":
+        print("it would take a few minutes") 
+elif ram_usage<30 and disk_usage<30 and cpu_usage<30:
+    print("Your pc is on optimal state")
+    
+ 
+
 
 
